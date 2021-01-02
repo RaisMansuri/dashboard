@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ongoingevents",
+  "info": {
+    "name": "ongoingevent"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "oe_image": {
+      "type": "string"
+    },
+    "oe_title": {
+      "type": "string"
+    },
+    "oe_detail": {
+      "type": "richtext"
+    }
+  }
+}

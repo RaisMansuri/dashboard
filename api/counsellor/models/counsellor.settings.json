@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "counsellors",
+  "info": {
+    "name": "counsellor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "appointments": {
+      "via": "counsellor",
+      "collection": "appointment"
+    },
+    "Experience": {
+      "type": "integer"
+    },
+    "Expertise": {
+      "type": "text"
+    },
+    "Summary": {
+      "type": "text"
+    },
+    "Field_Focus": {
+      "type": "text"
+    },
+    "Availability": {
+      "type": "string"
+    },
+    "Counsellor_pic": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careermedias",
+  "info": {
+    "name": "careermedia"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "cm_image": {
+      "type": "string"
+    },
+    "cm_title": {
+      "type": "string"
+    },
+    "cm_detail": {
+      "type": "richtext"
+    }
+  }
+}

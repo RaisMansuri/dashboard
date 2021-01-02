@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/careerrojgars",
+      "handler": "careerrojgar.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/careerrojgars/count",
+      "handler": "careerrojgar.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/careerrojgars/:id",
+      "handler": "careerrojgar.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/careerrojgars",
+      "handler": "careerrojgar.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/careerrojgars/:id",
+      "handler": "careerrojgar.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/careerrojgars/:id",
+      "handler": "careerrojgar.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

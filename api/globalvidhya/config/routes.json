@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/globalvidhyas",
+      "handler": "globalvidhya.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/globalvidhyas/count",
+      "handler": "globalvidhya.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/globalvidhyas/:id",
+      "handler": "globalvidhya.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/globalvidhyas",
+      "handler": "globalvidhya.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/globalvidhyas/:id",
+      "handler": "globalvidhya.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/globalvidhyas/:id",
+      "handler": "globalvidhya.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

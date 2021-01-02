@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/projectdishas",
+      "handler": "projectdisha.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projectdishas/count",
+      "handler": "projectdisha.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projectdishas/:id",
+      "handler": "projectdisha.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projectdishas",
+      "handler": "projectdisha.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/projectdishas/:id",
+      "handler": "projectdisha.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/projectdishas/:id",
+      "handler": "projectdisha.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

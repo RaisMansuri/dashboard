@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projectdishas",
+  "info": {
+    "name": "projectdisha"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "pd_image": {
+      "type": "string"
+    },
+    "pd_title": {
+      "type": "string"
+    },
+    "pd_detail": {
+      "type": "richtext"
+    }
+  }
+}

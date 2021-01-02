@@ -1,0 +1,2331 @@
+type AdminUser {
+  id: ID!
+  username: String
+}
+
+type Appointment {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  counsellor: Counsellor
+  Counsellor_Name: String
+  read_Date: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type AppointmentAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type AppointmentConnection {
+  values: [Appointment]
+  groupBy: AppointmentGroupBy
+  aggregate: AppointmentAggregator
+}
+
+type AppointmentConnection_id {
+  key: ID
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionCounsellor {
+  key: ID
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionCounsellor_Name {
+  key: String
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionCreated_by {
+  key: ID
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionCreatedAt {
+  key: DateTime
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionId {
+  key: ID
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionName {
+  key: String
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionRead_Date {
+  key: String
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionUpdated_by {
+  key: ID
+  connection: AppointmentConnection
+}
+
+type AppointmentConnectionUpdatedAt {
+  key: DateTime
+  connection: AppointmentConnection
+}
+
+type AppointmentGroupBy {
+  id: [AppointmentConnectionId]
+  _id: [AppointmentConnection_id]
+  createdAt: [AppointmentConnectionCreatedAt]
+  updatedAt: [AppointmentConnectionUpdatedAt]
+  Name: [AppointmentConnectionName]
+  counsellor: [AppointmentConnectionCounsellor]
+  Counsellor_Name: [AppointmentConnectionCounsellor_Name]
+  read_Date: [AppointmentConnectionRead_Date]
+  created_by: [AppointmentConnectionCreated_by]
+  updated_by: [AppointmentConnectionUpdated_by]
+}
+
+input AppointmentInput {
+  Name: String
+  counsellor: ID
+  Counsellor_Name: String
+  read_Date: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Blog {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  blog_title: String
+  blog_title2: String
+  blog_author: String
+  blog_date: DateTime
+  blog_image: UploadFile
+  blog_seokeyword: String
+  blog_url: String
+  blog_fdetail: String
+  blog_subdetail: String
+  blog_seodetail: String
+  blog_seotitle: String
+  blog_seoimageurl: String
+  created_by: AdminUser
+  updated_by: AdminUser
+  blog_subimage(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+}
+
+type BlogAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type BlogConnection {
+  values: [Blog]
+  groupBy: BlogGroupBy
+  aggregate: BlogAggregator
+}
+
+type BlogConnection_id {
+  key: ID
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_author {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_date {
+  key: DateTime
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_fdetail {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_image {
+  key: ID
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_seodetail {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_seoimageurl {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_seokeyword {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_seotitle {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_subdetail {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_title {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_title2 {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionBlog_url {
+  key: String
+  connection: BlogConnection
+}
+
+type BlogConnectionCreated_by {
+  key: ID
+  connection: BlogConnection
+}
+
+type BlogConnectionCreatedAt {
+  key: DateTime
+  connection: BlogConnection
+}
+
+type BlogConnectionId {
+  key: ID
+  connection: BlogConnection
+}
+
+type BlogConnectionUpdated_by {
+  key: ID
+  connection: BlogConnection
+}
+
+type BlogConnectionUpdatedAt {
+  key: DateTime
+  connection: BlogConnection
+}
+
+type BlogGroupBy {
+  id: [BlogConnectionId]
+  _id: [BlogConnection_id]
+  createdAt: [BlogConnectionCreatedAt]
+  updatedAt: [BlogConnectionUpdatedAt]
+  blog_title: [BlogConnectionBlog_title]
+  blog_title2: [BlogConnectionBlog_title2]
+  blog_author: [BlogConnectionBlog_author]
+  blog_date: [BlogConnectionBlog_date]
+  blog_image: [BlogConnectionBlog_image]
+  blog_seokeyword: [BlogConnectionBlog_seokeyword]
+  blog_url: [BlogConnectionBlog_url]
+  blog_fdetail: [BlogConnectionBlog_fdetail]
+  blog_subdetail: [BlogConnectionBlog_subdetail]
+  blog_seodetail: [BlogConnectionBlog_seodetail]
+  blog_seotitle: [BlogConnectionBlog_seotitle]
+  blog_seoimageurl: [BlogConnectionBlog_seoimageurl]
+  created_by: [BlogConnectionCreated_by]
+  updated_by: [BlogConnectionUpdated_by]
+}
+
+input BlogInput {
+  blog_title: String
+  blog_title2: String
+  blog_author: String
+  blog_date: DateTime
+  blog_image: ID
+  blog_seokeyword: String
+  blog_url: String
+  blog_fdetail: String
+  blog_subdetail: String
+  blog_seodetail: String
+  blog_seotitle: String
+  blog_seoimageurl: String
+  blog_subimage: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+type Careermedia {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  cm_image: String
+  cm_title: String
+  cm_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type CareermediaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CareermediaConnection {
+  values: [Careermedia]
+  groupBy: CareermediaGroupBy
+  aggregate: CareermediaAggregator
+}
+
+type CareermediaConnection_id {
+  key: ID
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionCm_detail {
+  key: String
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionCm_image {
+  key: String
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionCm_title {
+  key: String
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionCreated_by {
+  key: ID
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionCreatedAt {
+  key: DateTime
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionId {
+  key: ID
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionUpdated_by {
+  key: ID
+  connection: CareermediaConnection
+}
+
+type CareermediaConnectionUpdatedAt {
+  key: DateTime
+  connection: CareermediaConnection
+}
+
+type CareermediaGroupBy {
+  id: [CareermediaConnectionId]
+  _id: [CareermediaConnection_id]
+  createdAt: [CareermediaConnectionCreatedAt]
+  updatedAt: [CareermediaConnectionUpdatedAt]
+  cm_image: [CareermediaConnectionCm_image]
+  cm_title: [CareermediaConnectionCm_title]
+  cm_detail: [CareermediaConnectionCm_detail]
+  created_by: [CareermediaConnectionCreated_by]
+  updated_by: [CareermediaConnectionUpdated_by]
+}
+
+input CareermediaInput {
+  cm_image: String
+  cm_title: String
+  cm_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Careerrojgar {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  cr_image: String
+  cr_title: String
+  cr_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type CareerrojgarAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CareerrojgarConnection {
+  values: [Careerrojgar]
+  groupBy: CareerrojgarGroupBy
+  aggregate: CareerrojgarAggregator
+}
+
+type CareerrojgarConnection_id {
+  key: ID
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionCr_detail {
+  key: String
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionCr_image {
+  key: String
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionCr_title {
+  key: String
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionCreated_by {
+  key: ID
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionCreatedAt {
+  key: DateTime
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionId {
+  key: ID
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionUpdated_by {
+  key: ID
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarConnectionUpdatedAt {
+  key: DateTime
+  connection: CareerrojgarConnection
+}
+
+type CareerrojgarGroupBy {
+  id: [CareerrojgarConnectionId]
+  _id: [CareerrojgarConnection_id]
+  createdAt: [CareerrojgarConnectionCreatedAt]
+  updatedAt: [CareerrojgarConnectionUpdatedAt]
+  cr_image: [CareerrojgarConnectionCr_image]
+  cr_title: [CareerrojgarConnectionCr_title]
+  cr_detail: [CareerrojgarConnectionCr_detail]
+  created_by: [CareerrojgarConnectionCreated_by]
+  updated_by: [CareerrojgarConnectionUpdated_by]
+}
+
+input CareerrojgarInput {
+  cr_image: String
+  cr_title: String
+  cr_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input CollageInput {
+  cl_title: String
+  cl_detail: String
+  cl_image: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Collages {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  cl_title: String
+  cl_detail: String
+  cl_image: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type CollagesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CollagesConnection {
+  values: [Collages]
+  groupBy: CollagesGroupBy
+  aggregate: CollagesAggregator
+}
+
+type CollagesConnection_id {
+  key: ID
+  connection: CollagesConnection
+}
+
+type CollagesConnectionCl_detail {
+  key: String
+  connection: CollagesConnection
+}
+
+type CollagesConnectionCl_image {
+  key: String
+  connection: CollagesConnection
+}
+
+type CollagesConnectionCl_title {
+  key: String
+  connection: CollagesConnection
+}
+
+type CollagesConnectionCreated_by {
+  key: ID
+  connection: CollagesConnection
+}
+
+type CollagesConnectionCreatedAt {
+  key: DateTime
+  connection: CollagesConnection
+}
+
+type CollagesConnectionId {
+  key: ID
+  connection: CollagesConnection
+}
+
+type CollagesConnectionUpdated_by {
+  key: ID
+  connection: CollagesConnection
+}
+
+type CollagesConnectionUpdatedAt {
+  key: DateTime
+  connection: CollagesConnection
+}
+
+type CollagesGroupBy {
+  id: [CollagesConnectionId]
+  _id: [CollagesConnection_id]
+  createdAt: [CollagesConnectionCreatedAt]
+  updatedAt: [CollagesConnectionUpdatedAt]
+  cl_title: [CollagesConnectionCl_title]
+  cl_detail: [CollagesConnectionCl_detail]
+  cl_image: [CollagesConnectionCl_image]
+  created_by: [CollagesConnectionCreated_by]
+  updated_by: [CollagesConnectionUpdated_by]
+}
+
+type Counsellor {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  Experience: Int
+  Expertise: String
+  Summary: String
+  Field_Focus: String
+  Availability: String
+  Counsellor_pic: UploadFile
+  created_by: AdminUser
+  updated_by: AdminUser
+  appointments(sort: String, limit: Int, start: Int, where: JSON): [Appointment]
+}
+
+type CounsellorAggregator {
+  count: Int
+  totalCount: Int
+  sum: CounsellorAggregatorSum
+  avg: CounsellorAggregatorAvg
+  min: CounsellorAggregatorMin
+  max: CounsellorAggregatorMax
+}
+
+type CounsellorAggregatorAvg {
+  Experience: Float
+}
+
+type CounsellorAggregatorMax {
+  Experience: Float
+}
+
+type CounsellorAggregatorMin {
+  Experience: Float
+}
+
+type CounsellorAggregatorSum {
+  Experience: Float
+}
+
+type CounsellorConnection {
+  values: [Counsellor]
+  groupBy: CounsellorGroupBy
+  aggregate: CounsellorAggregator
+}
+
+type CounsellorConnection_id {
+  key: ID
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionAvailability {
+  key: String
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionCounsellor_pic {
+  key: ID
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionCreated_by {
+  key: ID
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionCreatedAt {
+  key: DateTime
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionExperience {
+  key: Int
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionExpertise {
+  key: String
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionField_Focus {
+  key: String
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionId {
+  key: ID
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionName {
+  key: String
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionSummary {
+  key: String
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionUpdated_by {
+  key: ID
+  connection: CounsellorConnection
+}
+
+type CounsellorConnectionUpdatedAt {
+  key: DateTime
+  connection: CounsellorConnection
+}
+
+type CounsellorGroupBy {
+  id: [CounsellorConnectionId]
+  _id: [CounsellorConnection_id]
+  createdAt: [CounsellorConnectionCreatedAt]
+  updatedAt: [CounsellorConnectionUpdatedAt]
+  Name: [CounsellorConnectionName]
+  Experience: [CounsellorConnectionExperience]
+  Expertise: [CounsellorConnectionExpertise]
+  Summary: [CounsellorConnectionSummary]
+  Field_Focus: [CounsellorConnectionField_Focus]
+  Availability: [CounsellorConnectionAvailability]
+  Counsellor_pic: [CounsellorConnectionCounsellor_pic]
+  created_by: [CounsellorConnectionCreated_by]
+  updated_by: [CounsellorConnectionUpdated_by]
+}
+
+input CounsellorInput {
+  Name: String
+  appointments: [ID]
+  Experience: Int
+  Expertise: String
+  Summary: String
+  Field_Focus: String
+  Availability: String
+  Counsellor_pic: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input createAppointmentInput {
+  data: AppointmentInput
+}
+
+type createAppointmentPayload {
+  appointment: Appointment
+}
+
+input createBlogInput {
+  data: BlogInput
+}
+
+type createBlogPayload {
+  blog: Blog
+}
+
+input createCareermediaInput {
+  data: CareermediaInput
+}
+
+type createCareermediaPayload {
+  careermedia: Careermedia
+}
+
+input createCareerrojgarInput {
+  data: CareerrojgarInput
+}
+
+type createCareerrojgarPayload {
+  careerrojgar: Careerrojgar
+}
+
+input createCollageInput {
+  data: CollageInput
+}
+
+type createCollagePayload {
+  collage: Collages
+}
+
+input createCounsellorInput {
+  data: CounsellorInput
+}
+
+type createCounsellorPayload {
+  counsellor: Counsellor
+}
+
+input createGlobalvidhyaInput {
+  data: GlobalvidhyaInput
+}
+
+type createGlobalvidhyaPayload {
+  globalvidhya: Globalvidhya
+}
+
+input createOngoingeventInput {
+  data: OngoingeventInput
+}
+
+type createOngoingeventPayload {
+  ongoingevent: Ongoingevent
+}
+
+input createProjectdishaInput {
+  data: ProjectdishaInput
+}
+
+type createProjectdishaPayload {
+  projectdisha: Projectdisha
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createSchoolInput {
+  data: SchoolInput
+}
+
+type createSchoolPayload {
+  school: Schools
+}
+
+input createTestimonialInput {
+  data: TestimonialInput
+}
+
+type createTestimonialPayload {
+  testimonial: Testimonial
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+input createYoutheventInput {
+  data: YoutheventInput
+}
+
+type createYoutheventPayload {
+  youthevent: Youthevents
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
+`date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO
+8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+input deleteAppointmentInput {
+  where: InputID
+}
+
+type deleteAppointmentPayload {
+  appointment: Appointment
+}
+
+input deleteBlogInput {
+  where: InputID
+}
+
+type deleteBlogPayload {
+  blog: Blog
+}
+
+input deleteCareermediaInput {
+  where: InputID
+}
+
+type deleteCareermediaPayload {
+  careermedia: Careermedia
+}
+
+input deleteCareerrojgarInput {
+  where: InputID
+}
+
+type deleteCareerrojgarPayload {
+  careerrojgar: Careerrojgar
+}
+
+input deleteCollageInput {
+  where: InputID
+}
+
+type deleteCollagePayload {
+  collage: Collages
+}
+
+input deleteCounsellorInput {
+  where: InputID
+}
+
+type deleteCounsellorPayload {
+  counsellor: Counsellor
+}
+
+input deleteGlobalvidhyaInput {
+  where: InputID
+}
+
+type deleteGlobalvidhyaPayload {
+  globalvidhya: Globalvidhya
+}
+
+input deleteOngoingeventInput {
+  where: InputID
+}
+
+type deleteOngoingeventPayload {
+  ongoingevent: Ongoingevent
+}
+
+input deleteProjectdishaInput {
+  where: InputID
+}
+
+type deleteProjectdishaPayload {
+  projectdisha: Projectdisha
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteSchoolInput {
+  where: InputID
+}
+
+type deleteSchoolPayload {
+  school: Schools
+}
+
+input deleteTestimonialInput {
+  where: InputID
+}
+
+type deleteTestimonialPayload {
+  testimonial: Testimonial
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+input deleteYoutheventInput {
+  where: InputID
+}
+
+type deleteYoutheventPayload {
+  youthevent: Youthevents
+}
+
+input editAppointmentInput {
+  Name: String
+  counsellor: ID
+  Counsellor_Name: String
+  read_Date: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editBlogInput {
+  blog_title: String
+  blog_title2: String
+  blog_author: String
+  blog_date: DateTime
+  blog_image: ID
+  blog_seokeyword: String
+  blog_url: String
+  blog_fdetail: String
+  blog_subdetail: String
+  blog_seodetail: String
+  blog_seotitle: String
+  blog_seoimageurl: String
+  blog_subimage: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editCareermediaInput {
+  cm_image: String
+  cm_title: String
+  cm_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editCareerrojgarInput {
+  cr_image: String
+  cr_title: String
+  cr_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editCollageInput {
+  cl_title: String
+  cl_detail: String
+  cl_image: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editCounsellorInput {
+  Name: String
+  appointments: [ID]
+  Experience: Int
+  Expertise: String
+  Summary: String
+  Field_Focus: String
+  Availability: String
+  Counsellor_pic: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editFileInput {
+  name: String
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editGlobalvidhyaInput {
+  gv_image: String
+  gv_title: String
+  gv_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editOngoingeventInput {
+  oe_image: String
+  oe_title: String
+  oe_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editProjectdishaInput {
+  pd_image: String
+  pd_title: String
+  pd_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editSchoolInput {
+  sh_title: String
+  sh_detail: String
+  sh_image: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editTestimonialInput {
+  tm_image: ID
+  tm_name: String
+  tm_expertise: String
+  tm_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editYoutheventInput {
+  ye_image: String
+  ye_title: String
+  ye_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input FileInfoInput {
+  name: String
+  alternativeText: String
+  caption: String
+}
+
+input FileInput {
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+type Globalvidhya {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  gv_image: String
+  gv_title: String
+  gv_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type GlobalvidhyaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type GlobalvidhyaConnection {
+  values: [Globalvidhya]
+  groupBy: GlobalvidhyaGroupBy
+  aggregate: GlobalvidhyaAggregator
+}
+
+type GlobalvidhyaConnection_id {
+  key: ID
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionCreated_by {
+  key: ID
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionCreatedAt {
+  key: DateTime
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionGv_detail {
+  key: String
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionGv_image {
+  key: String
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionGv_title {
+  key: String
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionId {
+  key: ID
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionUpdated_by {
+  key: ID
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaConnectionUpdatedAt {
+  key: DateTime
+  connection: GlobalvidhyaConnection
+}
+
+type GlobalvidhyaGroupBy {
+  id: [GlobalvidhyaConnectionId]
+  _id: [GlobalvidhyaConnection_id]
+  createdAt: [GlobalvidhyaConnectionCreatedAt]
+  updatedAt: [GlobalvidhyaConnectionUpdatedAt]
+  gv_image: [GlobalvidhyaConnectionGv_image]
+  gv_title: [GlobalvidhyaConnectionGv_title]
+  gv_detail: [GlobalvidhyaConnectionGv_detail]
+  created_by: [GlobalvidhyaConnectionCreated_by]
+  updated_by: [GlobalvidhyaConnectionUpdated_by]
+}
+
+input GlobalvidhyaInput {
+  gv_image: String
+  gv_title: String
+  gv_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Appointment | AppointmentConnection | AppointmentAggregator | AppointmentGroupBy | AppointmentConnectionId | AppointmentConnection_id | AppointmentConnectionCreatedAt | AppointmentConnectionUpdatedAt | AppointmentConnectionName | AppointmentConnectionCounsellor | AppointmentConnectionCounsellor_Name | AppointmentConnectionRead_Date | AppointmentConnectionCreated_by | AppointmentConnectionUpdated_by | createAppointmentPayload | updateAppointmentPayload | deleteAppointmentPayload | Blog | BlogConnection | BlogAggregator | BlogGroupBy | BlogConnectionId | BlogConnection_id | BlogConnectionCreatedAt | BlogConnectionUpdatedAt | BlogConnectionBlog_title | BlogConnectionBlog_title2 | BlogConnectionBlog_author | BlogConnectionBlog_date | BlogConnectionBlog_image | BlogConnectionBlog_seokeyword | BlogConnectionBlog_url | BlogConnectionBlog_fdetail | BlogConnectionBlog_subdetail | BlogConnectionBlog_seodetail | BlogConnectionBlog_seotitle | BlogConnectionBlog_seoimageurl | BlogConnectionCreated_by | BlogConnectionUpdated_by | createBlogPayload | updateBlogPayload | deleteBlogPayload | Careermedia | CareermediaConnection | CareermediaAggregator | CareermediaGroupBy | CareermediaConnectionId | CareermediaConnection_id | CareermediaConnectionCreatedAt | CareermediaConnectionUpdatedAt | CareermediaConnectionCm_image | CareermediaConnectionCm_title | CareermediaConnectionCm_detail | CareermediaConnectionCreated_by | CareermediaConnectionUpdated_by | createCareermediaPayload | updateCareermediaPayload | deleteCareermediaPayload | Careerrojgar | CareerrojgarConnection | CareerrojgarAggregator | CareerrojgarGroupBy | CareerrojgarConnectionId | CareerrojgarConnection_id | CareerrojgarConnectionCreatedAt | CareerrojgarConnectionUpdatedAt | CareerrojgarConnectionCr_image | CareerrojgarConnectionCr_title | CareerrojgarConnectionCr_detail | CareerrojgarConnectionCreated_by | CareerrojgarConnectionUpdated_by | createCareerrojgarPayload | updateCareerrojgarPayload | deleteCareerrojgarPayload | Collages | CollagesConnection | CollagesAggregator | CollagesGroupBy | CollagesConnectionId | CollagesConnection_id | CollagesConnectionCreatedAt | CollagesConnectionUpdatedAt | CollagesConnectionCl_title | CollagesConnectionCl_detail | CollagesConnectionCl_image | CollagesConnectionCreated_by | CollagesConnectionUpdated_by | createCollagePayload | updateCollagePayload | deleteCollagePayload | Counsellor | CounsellorConnection | CounsellorAggregator | CounsellorAggregatorSum | CounsellorAggregatorAvg | CounsellorAggregatorMin | CounsellorAggregatorMax | CounsellorGroupBy | CounsellorConnectionId | CounsellorConnection_id | CounsellorConnectionCreatedAt | CounsellorConnectionUpdatedAt | CounsellorConnectionName | CounsellorConnectionExperience | CounsellorConnectionExpertise | CounsellorConnectionSummary | CounsellorConnectionField_Focus | CounsellorConnectionAvailability | CounsellorConnectionCounsellor_pic | CounsellorConnectionCreated_by | CounsellorConnectionUpdated_by | createCounsellorPayload | updateCounsellorPayload | deleteCounsellorPayload | Globalvidhya | GlobalvidhyaConnection | GlobalvidhyaAggregator | GlobalvidhyaGroupBy | GlobalvidhyaConnectionId | GlobalvidhyaConnection_id | GlobalvidhyaConnectionCreatedAt | GlobalvidhyaConnectionUpdatedAt | GlobalvidhyaConnectionGv_image | GlobalvidhyaConnectionGv_title | GlobalvidhyaConnectionGv_detail | GlobalvidhyaConnectionCreated_by | GlobalvidhyaConnectionUpdated_by | createGlobalvidhyaPayload | updateGlobalvidhyaPayload | deleteGlobalvidhyaPayload | Ongoingevent | OngoingeventConnection | OngoingeventAggregator | OngoingeventGroupBy | OngoingeventConnectionId | OngoingeventConnection_id | OngoingeventConnectionCreatedAt | OngoingeventConnectionUpdatedAt | OngoingeventConnectionOe_image | OngoingeventConnectionOe_title | OngoingeventConnectionOe_detail | OngoingeventConnectionCreated_by | OngoingeventConnectionUpdated_by | createOngoingeventPayload | updateOngoingeventPayload | deleteOngoingeventPayload | Projectdisha | ProjectdishaConnection | ProjectdishaAggregator | ProjectdishaGroupBy | ProjectdishaConnectionId | ProjectdishaConnection_id | ProjectdishaConnectionCreatedAt | ProjectdishaConnectionUpdatedAt | ProjectdishaConnectionPd_image | ProjectdishaConnectionPd_title | ProjectdishaConnectionPd_detail | ProjectdishaConnectionCreated_by | ProjectdishaConnectionUpdated_by | createProjectdishaPayload | updateProjectdishaPayload | deleteProjectdishaPayload | Schools | SchoolsConnection | SchoolsAggregator | SchoolsGroupBy | SchoolsConnectionId | SchoolsConnection_id | SchoolsConnectionCreatedAt | SchoolsConnectionUpdatedAt | SchoolsConnectionSh_title | SchoolsConnectionSh_detail | SchoolsConnectionSh_image | SchoolsConnectionCreated_by | SchoolsConnectionUpdated_by | createSchoolPayload | updateSchoolPayload | deleteSchoolPayload | Testimonial | TestimonialConnection | TestimonialAggregator | TestimonialGroupBy | TestimonialConnectionId | TestimonialConnection_id | TestimonialConnectionCreatedAt | TestimonialConnectionUpdatedAt | TestimonialConnectionTm_image | TestimonialConnectionTm_name | TestimonialConnectionTm_expertise | TestimonialConnectionTm_detail | TestimonialConnectionCreated_by | TestimonialConnectionUpdated_by | createTestimonialPayload | updateTestimonialPayload | deleteTestimonialPayload | Youthevents | YoutheventsConnection | YoutheventsAggregator | YoutheventsGroupBy | YoutheventsConnectionId | YoutheventsConnection_id | YoutheventsConnectionCreatedAt | YoutheventsConnectionUpdatedAt | YoutheventsConnectionYe_image | YoutheventsConnectionYe_title | YoutheventsConnectionYe_detail | YoutheventsConnectionCreated_by | YoutheventsConnectionUpdated_by | createYoutheventPayload | updateYoutheventPayload | deleteYoutheventPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionCreated_by | UploadFileConnectionUpdated_by | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionCreatedAt | UsersPermissionsRoleConnectionUpdatedAt | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsRoleConnectionCreated_by | UsersPermissionsRoleConnectionUpdated_by | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionCreatedAt | UsersPermissionsUserConnectionUpdatedAt | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionCreated_by | UsersPermissionsUserConnectionUpdated_by | createUserPayload | updateUserPayload | deleteUserPayload
+
+type Mutation {
+  createAppointment(input: createAppointmentInput): createAppointmentPayload
+  updateAppointment(input: updateAppointmentInput): updateAppointmentPayload
+  deleteAppointment(input: deleteAppointmentInput): deleteAppointmentPayload
+  createBlog(input: createBlogInput): createBlogPayload
+  updateBlog(input: updateBlogInput): updateBlogPayload
+  deleteBlog(input: deleteBlogInput): deleteBlogPayload
+  createCareermedia(input: createCareermediaInput): createCareermediaPayload
+  updateCareermedia(input: updateCareermediaInput): updateCareermediaPayload
+  deleteCareermedia(input: deleteCareermediaInput): deleteCareermediaPayload
+  createCareerrojgar(input: createCareerrojgarInput): createCareerrojgarPayload
+  updateCareerrojgar(input: updateCareerrojgarInput): updateCareerrojgarPayload
+  deleteCareerrojgar(input: deleteCareerrojgarInput): deleteCareerrojgarPayload
+  createCollage(input: createCollageInput): createCollagePayload
+  updateCollage(input: updateCollageInput): updateCollagePayload
+  deleteCollage(input: deleteCollageInput): deleteCollagePayload
+  createCounsellor(input: createCounsellorInput): createCounsellorPayload
+  updateCounsellor(input: updateCounsellorInput): updateCounsellorPayload
+  deleteCounsellor(input: deleteCounsellorInput): deleteCounsellorPayload
+  createGlobalvidhya(input: createGlobalvidhyaInput): createGlobalvidhyaPayload
+  updateGlobalvidhya(input: updateGlobalvidhyaInput): updateGlobalvidhyaPayload
+  deleteGlobalvidhya(input: deleteGlobalvidhyaInput): deleteGlobalvidhyaPayload
+  createOngoingevent(input: createOngoingeventInput): createOngoingeventPayload
+  updateOngoingevent(input: updateOngoingeventInput): updateOngoingeventPayload
+  deleteOngoingevent(input: deleteOngoingeventInput): deleteOngoingeventPayload
+  createProjectdisha(input: createProjectdishaInput): createProjectdishaPayload
+  updateProjectdisha(input: updateProjectdishaInput): updateProjectdishaPayload
+  deleteProjectdisha(input: deleteProjectdishaInput): deleteProjectdishaPayload
+  createSchool(input: createSchoolInput): createSchoolPayload
+  updateSchool(input: updateSchoolInput): updateSchoolPayload
+  deleteSchool(input: deleteSchoolInput): deleteSchoolPayload
+  createTestimonial(input: createTestimonialInput): createTestimonialPayload
+  updateTestimonial(input: updateTestimonialInput): updateTestimonialPayload
+  deleteTestimonial(input: deleteTestimonialInput): deleteTestimonialPayload
+  createYouthevent(input: createYoutheventInput): createYoutheventPayload
+  updateYouthevent(input: updateYoutheventInput): updateYoutheventPayload
+  deleteYouthevent(input: deleteYoutheventInput): deleteYoutheventPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+  forgotPassword(email: String!): UserPermissionsPasswordPayload
+  resetPassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+type Ongoingevent {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  oe_image: String
+  oe_title: String
+  oe_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type OngoingeventAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type OngoingeventConnection {
+  values: [Ongoingevent]
+  groupBy: OngoingeventGroupBy
+  aggregate: OngoingeventAggregator
+}
+
+type OngoingeventConnection_id {
+  key: ID
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionCreated_by {
+  key: ID
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionCreatedAt {
+  key: DateTime
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionId {
+  key: ID
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionOe_detail {
+  key: String
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionOe_image {
+  key: String
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionOe_title {
+  key: String
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionUpdated_by {
+  key: ID
+  connection: OngoingeventConnection
+}
+
+type OngoingeventConnectionUpdatedAt {
+  key: DateTime
+  connection: OngoingeventConnection
+}
+
+type OngoingeventGroupBy {
+  id: [OngoingeventConnectionId]
+  _id: [OngoingeventConnection_id]
+  createdAt: [OngoingeventConnectionCreatedAt]
+  updatedAt: [OngoingeventConnectionUpdatedAt]
+  oe_image: [OngoingeventConnectionOe_image]
+  oe_title: [OngoingeventConnectionOe_title]
+  oe_detail: [OngoingeventConnectionOe_detail]
+  created_by: [OngoingeventConnectionCreated_by]
+  updated_by: [OngoingeventConnectionUpdated_by]
+}
+
+input OngoingeventInput {
+  oe_image: String
+  oe_title: String
+  oe_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Projectdisha {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  pd_image: String
+  pd_title: String
+  pd_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type ProjectdishaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ProjectdishaConnection {
+  values: [Projectdisha]
+  groupBy: ProjectdishaGroupBy
+  aggregate: ProjectdishaAggregator
+}
+
+type ProjectdishaConnection_id {
+  key: ID
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionCreated_by {
+  key: ID
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionCreatedAt {
+  key: DateTime
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionId {
+  key: ID
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionPd_detail {
+  key: String
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionPd_image {
+  key: String
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionPd_title {
+  key: String
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionUpdated_by {
+  key: ID
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaConnectionUpdatedAt {
+  key: DateTime
+  connection: ProjectdishaConnection
+}
+
+type ProjectdishaGroupBy {
+  id: [ProjectdishaConnectionId]
+  _id: [ProjectdishaConnection_id]
+  createdAt: [ProjectdishaConnectionCreatedAt]
+  updatedAt: [ProjectdishaConnectionUpdatedAt]
+  pd_image: [ProjectdishaConnectionPd_image]
+  pd_title: [ProjectdishaConnectionPd_title]
+  pd_detail: [ProjectdishaConnectionPd_detail]
+  created_by: [ProjectdishaConnectionCreated_by]
+  updated_by: [ProjectdishaConnectionUpdated_by]
+}
+
+input ProjectdishaInput {
+  pd_image: String
+  pd_title: String
+  pd_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Query {
+  appointment(id: ID!): Appointment
+  appointments(sort: String, limit: Int, start: Int, where: JSON): [Appointment]
+  appointmentsConnection(sort: String, limit: Int, start: Int, where: JSON): AppointmentConnection
+  blog(id: ID!): Blog
+  blogs(sort: String, limit: Int, start: Int, where: JSON): [Blog]
+  blogsConnection(sort: String, limit: Int, start: Int, where: JSON): BlogConnection
+  careermedia(id: ID!): Careermedia
+  careermedias(sort: String, limit: Int, start: Int, where: JSON): [Careermedia]
+  careermediasConnection(sort: String, limit: Int, start: Int, where: JSON): CareermediaConnection
+  careerrojgar(id: ID!): Careerrojgar
+  careerrojgars(sort: String, limit: Int, start: Int, where: JSON): [Careerrojgar]
+  careerrojgarsConnection(sort: String, limit: Int, start: Int, where: JSON): CareerrojgarConnection
+  collage(id: ID!): Collages
+  collages(sort: String, limit: Int, start: Int, where: JSON): [Collages]
+  collagesConnection(sort: String, limit: Int, start: Int, where: JSON): CollagesConnection
+  counsellor(id: ID!): Counsellor
+  counsellors(sort: String, limit: Int, start: Int, where: JSON): [Counsellor]
+  counsellorsConnection(sort: String, limit: Int, start: Int, where: JSON): CounsellorConnection
+  globalvidhya(id: ID!): Globalvidhya
+  globalvidhyas(sort: String, limit: Int, start: Int, where: JSON): [Globalvidhya]
+  globalvidhyasConnection(sort: String, limit: Int, start: Int, where: JSON): GlobalvidhyaConnection
+  ongoingevent(id: ID!): Ongoingevent
+  ongoingevents(sort: String, limit: Int, start: Int, where: JSON): [Ongoingevent]
+  ongoingeventsConnection(sort: String, limit: Int, start: Int, where: JSON): OngoingeventConnection
+  projectdisha(id: ID!): Projectdisha
+  projectdishas(sort: String, limit: Int, start: Int, where: JSON): [Projectdisha]
+  projectdishasConnection(sort: String, limit: Int, start: Int, where: JSON): ProjectdishaConnection
+  school(id: ID!): Schools
+  schools(sort: String, limit: Int, start: Int, where: JSON): [Schools]
+  schoolsConnection(sort: String, limit: Int, start: Int, where: JSON): SchoolsConnection
+  testimonial(id: ID!): Testimonial
+  testimonials(sort: String, limit: Int, start: Int, where: JSON): [Testimonial]
+  testimonialsConnection(sort: String, limit: Int, start: Int, where: JSON): TestimonialConnection
+  youthevent(id: ID!): Youthevents
+  youthevents(sort: String, limit: Int, start: Int, where: JSON): [Youthevents]
+  youtheventsConnection(sort: String, limit: Int, start: Int, where: JSON): YoutheventsConnection
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input SchoolInput {
+  sh_title: String
+  sh_detail: String
+  sh_image: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Schools {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  sh_title: String
+  sh_detail: String
+  sh_image: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type SchoolsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type SchoolsConnection {
+  values: [Schools]
+  groupBy: SchoolsGroupBy
+  aggregate: SchoolsAggregator
+}
+
+type SchoolsConnection_id {
+  key: ID
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionCreated_by {
+  key: ID
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionCreatedAt {
+  key: DateTime
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionId {
+  key: ID
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionSh_detail {
+  key: String
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionSh_image {
+  key: String
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionSh_title {
+  key: String
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionUpdated_by {
+  key: ID
+  connection: SchoolsConnection
+}
+
+type SchoolsConnectionUpdatedAt {
+  key: DateTime
+  connection: SchoolsConnection
+}
+
+type SchoolsGroupBy {
+  id: [SchoolsConnectionId]
+  _id: [SchoolsConnection_id]
+  createdAt: [SchoolsConnectionCreatedAt]
+  updatedAt: [SchoolsConnectionUpdatedAt]
+  sh_title: [SchoolsConnectionSh_title]
+  sh_detail: [SchoolsConnectionSh_detail]
+  sh_image: [SchoolsConnectionSh_image]
+  created_by: [SchoolsConnectionCreated_by]
+  updated_by: [SchoolsConnectionUpdated_by]
+}
+
+type Testimonial {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  tm_image: UploadFile
+  tm_name: String
+  tm_expertise: String
+  tm_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type TestimonialAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type TestimonialConnection {
+  values: [Testimonial]
+  groupBy: TestimonialGroupBy
+  aggregate: TestimonialAggregator
+}
+
+type TestimonialConnection_id {
+  key: ID
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionCreated_by {
+  key: ID
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionCreatedAt {
+  key: DateTime
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionId {
+  key: ID
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionTm_detail {
+  key: String
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionTm_expertise {
+  key: String
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionTm_image {
+  key: ID
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionTm_name {
+  key: String
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionUpdated_by {
+  key: ID
+  connection: TestimonialConnection
+}
+
+type TestimonialConnectionUpdatedAt {
+  key: DateTime
+  connection: TestimonialConnection
+}
+
+type TestimonialGroupBy {
+  id: [TestimonialConnectionId]
+  _id: [TestimonialConnection_id]
+  createdAt: [TestimonialConnectionCreatedAt]
+  updatedAt: [TestimonialConnectionUpdatedAt]
+  tm_image: [TestimonialConnectionTm_image]
+  tm_name: [TestimonialConnectionTm_name]
+  tm_expertise: [TestimonialConnectionTm_expertise]
+  tm_detail: [TestimonialConnectionTm_detail]
+  created_by: [TestimonialConnectionCreated_by]
+  updated_by: [TestimonialConnectionUpdated_by]
+}
+
+input TestimonialInput {
+  tm_image: ID
+  tm_name: String
+  tm_expertise: String
+  tm_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+"""A time string with format: HH:mm:ss.SSS"""
+scalar Time
+
+input updateAppointmentInput {
+  where: InputID
+  data: editAppointmentInput
+}
+
+type updateAppointmentPayload {
+  appointment: Appointment
+}
+
+input updateBlogInput {
+  where: InputID
+  data: editBlogInput
+}
+
+type updateBlogPayload {
+  blog: Blog
+}
+
+input updateCareermediaInput {
+  where: InputID
+  data: editCareermediaInput
+}
+
+type updateCareermediaPayload {
+  careermedia: Careermedia
+}
+
+input updateCareerrojgarInput {
+  where: InputID
+  data: editCareerrojgarInput
+}
+
+type updateCareerrojgarPayload {
+  careerrojgar: Careerrojgar
+}
+
+input updateCollageInput {
+  where: InputID
+  data: editCollageInput
+}
+
+type updateCollagePayload {
+  collage: Collages
+}
+
+input updateCounsellorInput {
+  where: InputID
+  data: editCounsellorInput
+}
+
+type updateCounsellorPayload {
+  counsellor: Counsellor
+}
+
+input updateGlobalvidhyaInput {
+  where: InputID
+  data: editGlobalvidhyaInput
+}
+
+type updateGlobalvidhyaPayload {
+  globalvidhya: Globalvidhya
+}
+
+input updateOngoingeventInput {
+  where: InputID
+  data: editOngoingeventInput
+}
+
+type updateOngoingeventPayload {
+  ongoingevent: Ongoingevent
+}
+
+input updateProjectdishaInput {
+  where: InputID
+  data: editProjectdishaInput
+}
+
+type updateProjectdishaPayload {
+  projectdisha: Projectdisha
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateSchoolInput {
+  where: InputID
+  data: editSchoolInput
+}
+
+type updateSchoolPayload {
+  school: Schools
+}
+
+input updateTestimonialInput {
+  where: InputID
+  data: editTestimonialInput
+}
+
+type updateTestimonialPayload {
+  testimonial: Testimonial
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+input updateYoutheventInput {
+  where: InputID
+  data: editYoutheventInput
+}
+
+type updateYoutheventPayload {
+  youthevent: Youthevents
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  created_by: AdminUser
+  updated_by: AdminUser
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+  sum: UploadFileAggregatorSum
+  avg: UploadFileAggregatorAvg
+  min: UploadFileAggregatorMin
+  max: UploadFileAggregatorMax
+}
+
+type UploadFileAggregatorAvg {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMax {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMin {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorSum {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileConnection_id {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionAlternativeText {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCaption {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreated_by {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionFormats {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHeight {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPreviewUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider_metadata {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: Float
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdated_by {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionWidth {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileGroupBy {
+  id: [UploadFileConnectionId]
+  _id: [UploadFileConnection_id]
+  createdAt: [UploadFileConnectionCreatedAt]
+  updatedAt: [UploadFileConnectionUpdatedAt]
+  name: [UploadFileConnectionName]
+  alternativeText: [UploadFileConnectionAlternativeText]
+  caption: [UploadFileConnectionCaption]
+  width: [UploadFileConnectionWidth]
+  height: [UploadFileConnectionHeight]
+  formats: [UploadFileConnectionFormats]
+  hash: [UploadFileConnectionHash]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  previewUrl: [UploadFileConnectionPreviewUrl]
+  provider: [UploadFileConnectionProvider]
+  provider_metadata: [UploadFileConnectionProvider_metadata]
+  created_by: [UploadFileConnectionCreated_by]
+  updated_by: [UploadFileConnectionUpdated_by]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+type UserPermissionsPasswordPayload {
+  ok: Boolean!
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String
+  user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+input UsersPermissionsRegisterInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  description: String
+  type: String
+  created_by: AdminUser
+  updated_by: AdminUser
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleConnection_id {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionCreated_by {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionCreatedAt {
+  key: DateTime
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionUpdated_by {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionUpdatedAt {
+  key: DateTime
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleGroupBy {
+  id: [UsersPermissionsRoleConnectionId]
+  _id: [UsersPermissionsRoleConnection_id]
+  createdAt: [UsersPermissionsRoleConnectionCreatedAt]
+  updatedAt: [UsersPermissionsRoleConnectionUpdatedAt]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+  created_by: [UsersPermissionsRoleConnectionCreated_by]
+  updated_by: [UsersPermissionsRoleConnectionUpdated_by]
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserConnection_id {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreated_by {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreatedAt {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdated_by {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdatedAt {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserGroupBy {
+  id: [UsersPermissionsUserConnectionId]
+  _id: [UsersPermissionsUserConnection_id]
+  createdAt: [UsersPermissionsUserConnectionCreatedAt]
+  updatedAt: [UsersPermissionsUserConnectionUpdatedAt]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+  created_by: [UsersPermissionsUserConnectionCreated_by]
+  updated_by: [UsersPermissionsUserConnectionUpdated_by]
+}
+
+input YoutheventInput {
+  ye_image: String
+  ye_title: String
+  ye_detail: String
+  created_by: ID
+  updated_by: ID
+}
+
+type Youthevents {
+  id: ID!
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  ye_image: String
+  ye_title: String
+  ye_detail: String
+  created_by: AdminUser
+  updated_by: AdminUser
+}
+
+type YoutheventsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type YoutheventsConnection {
+  values: [Youthevents]
+  groupBy: YoutheventsGroupBy
+  aggregate: YoutheventsAggregator
+}
+
+type YoutheventsConnection_id {
+  key: ID
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionCreated_by {
+  key: ID
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionCreatedAt {
+  key: DateTime
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionId {
+  key: ID
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionUpdated_by {
+  key: ID
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionUpdatedAt {
+  key: DateTime
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionYe_detail {
+  key: String
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionYe_image {
+  key: String
+  connection: YoutheventsConnection
+}
+
+type YoutheventsConnectionYe_title {
+  key: String
+  connection: YoutheventsConnection
+}
+
+type YoutheventsGroupBy {
+  id: [YoutheventsConnectionId]
+  _id: [YoutheventsConnection_id]
+  createdAt: [YoutheventsConnectionCreatedAt]
+  updatedAt: [YoutheventsConnectionUpdatedAt]
+  ye_image: [YoutheventsConnectionYe_image]
+  ye_title: [YoutheventsConnectionYe_title]
+  ye_detail: [YoutheventsConnectionYe_detail]
+  created_by: [YoutheventsConnectionCreated_by]
+  updated_by: [YoutheventsConnectionUpdated_by]
+}

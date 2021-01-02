@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careerrojgars",
+  "info": {
+    "name": "careerrojgar"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "cr_image": {
+      "type": "string"
+    },
+    "cr_title": {
+      "type": "string"
+    },
+    "cr_detail": {
+      "type": "richtext"
+    }
+  }
+}

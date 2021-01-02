@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/careermedias",
+      "handler": "careermedia.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/careermedias/count",
+      "handler": "careermedia.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/careermedias/:id",
+      "handler": "careermedia.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/careermedias",
+      "handler": "careermedia.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/careermedias/:id",
+      "handler": "careermedia.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/careermedias/:id",
+      "handler": "careermedia.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schools",
+  "info": {
+    "name": "schools"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "sh_title": {
+      "type": "string"
+    },
+    "sh_detail": {
+      "type": "text"
+    },
+    "sh_image": {
+      "type": "string"
+    }
+  }
+}

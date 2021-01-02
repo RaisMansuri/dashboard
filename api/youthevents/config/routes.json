@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/youthevents",
+      "handler": "youthevents.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/youthevents/count",
+      "handler": "youthevents.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/youthevents/:id",
+      "handler": "youthevents.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/youthevents",
+      "handler": "youthevents.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/youthevents/:id",
+      "handler": "youthevents.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/youthevents/:id",
+      "handler": "youthevents.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

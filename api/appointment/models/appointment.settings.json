@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appointments",
+  "info": {
+    "name": "appointment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "counsellor": {
+      "model": "counsellor",
+      "via": "appointments"
+    },
+    "Counsellor_Name": {
+      "type": "string"
+    },
+    "read_Date": {
+      "type": "string"
+    }
+  }
+}

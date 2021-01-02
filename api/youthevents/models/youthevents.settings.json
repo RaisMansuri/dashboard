@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "youthevents",
+  "info": {
+    "name": "youthevents"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "ye_image": {
+      "type": "string"
+    },
+    "ye_title": {
+      "type": "string"
+    },
+    "ye_detail": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collages",
+  "info": {
+    "name": "Collages"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "cl_title": {
+      "type": "string"
+    },
+    "cl_detail": {
+      "type": "text"
+    },
+    "cl_image": {
+      "type": "string"
+    }
+  }
+}

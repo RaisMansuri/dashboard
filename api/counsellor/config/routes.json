@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/counsellors",
+      "handler": "counsellor.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/counsellors/count",
+      "handler": "counsellor.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/counsellors/:id",
+      "handler": "counsellor.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/counsellors",
+      "handler": "counsellor.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/counsellors/:id",
+      "handler": "counsellor.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/counsellors/:id",
+      "handler": "counsellor.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

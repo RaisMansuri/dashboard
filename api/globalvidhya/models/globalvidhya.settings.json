@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "globalvidhyas",
+  "info": {
+    "name": "globalvidhya"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "gv_image": {
+      "type": "string"
+    },
+    "gv_title": {
+      "type": "string"
+    },
+    "gv_detail": {
+      "type": "richtext"
+    }
+  }
+}
